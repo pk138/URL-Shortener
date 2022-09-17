@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+</head>
+<body style="background-color: rgb(216, 245, 99);">
+    <div class="container">
+        <h2>URL Shortener</h2>
+        <p>Your shortened URL is</p>
+        <div class="result-container">
+            <span><a id="short-url" href="<%= `/${shorturl}` %>" target="_blank"><%= shorturl %></a></span>
+            <span onclick="copyUrl()" class="copy-span" id="copy-action">Copy</span>
+        </div>
+        <p>It has been converted <%= times %> times</p>
+        <br />
+        <a href="/"><span class="span-link">Try Another</span></a>
+    </div>
+    <script>
+        const copyUrl = () => {
+            const copyTextarea = document.getElementById("short-url").href;
+            navigator.clipboard.writeText(copyTextarea);
+            document.getElementById("copy-action").innerHTML = "Copied";
+        };
+    </script>
+</body>
+</html>
