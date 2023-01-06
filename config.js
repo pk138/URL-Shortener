@@ -2,7 +2,7 @@
 const db = mysql.createConnection({
     host: "localhost",
     user: "new_user",
-    password: "Pk@1pass",
+    password: "Pkjhjhj",
     database: "urlshortner"
 });
 
